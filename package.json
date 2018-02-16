@@ -2,7 +2,7 @@
   "name": "realsavvy-package",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/real_savvy.js",
   "scripts": {
     "test": "karma start"
   },
