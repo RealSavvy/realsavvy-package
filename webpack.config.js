@@ -1,10 +1,11 @@
 const path = require('path');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 
-module.exports = {
+let clientConfig = {
+  target: 'web',
   entry: {
-    'real_savvy': './src/index.js',
-    'real_savvy.min': './src/index.js',
+    'real_savvy.web': './src/index.js',
+    'real_savvy.web.min': './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -29,4 +30,19 @@ module.exports = {
   plugins: [
     new MinifyPlugin({},{include: /\.min\.js$/})
   ]
-};
+}
+
+let serverConfig = {
+  target: 'node',
+  entry: {
+    'real_savvy.node': './src/index.js',
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    library: ['RealSavvy'],
+    libraryTarget: 'umd',
+  }
+}
+
+module.exports = [clientConfig, serverConfig]

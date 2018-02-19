@@ -7,12 +7,12 @@ export default class Property extends ComplexShowForAdapter(Base) {
   search ({filter = null, marketId = null, page = null}) {
     filter = filter || {}
     page = page || {}
-    return this.post(`/search`).send({filter: filter, market_id: marketId, page: page})
+    return this.post(`/search`, {data: {filter: filter, market_id: marketId, page: page}})
   }
 
   cluster ({filter = null, marketId = null, page = null}) {
     filter = filter || {}
     page = page || {}
-    return this.post(`/map/clusters`).send({filter: filter, market_id: marketId, page: page})
+    return this.post(`/map/clusters`, {data: {filter: filter, market_id: marketId, page: page}})
   }
 }

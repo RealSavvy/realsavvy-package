@@ -1,30 +1,41 @@
-import superagent from 'superagent'
-import superagentPrefix from 'superagent-prefix'
-import superagentJsonapify from 'superagent-jsonapify'
-
-superagentJsonapify(superagent)
+import 'es6-promise/auto';
+import axios from 'axios'
 
 export default class Connection {
   constructor ({client = null}) {
     this.client = client
+    this.agent = this.constructor.agent.create({
+      baseURL: this.client.apiUrl,
+      headers: {'Authorization': 'Bearer ' + this.client.token}
+    });
   }
-  static get agent () { return superagent }
-  generalRequestSettings (request) {
-    return request.use(superagentPrefix(this.client.api_url)).set('Authorization', 'Bearer ' + this.client.token)
+
+  static get agent() { return this.agentOverwrite || axios }
+  static set agent(newAgent) { return this.agentOverwrite = newAgent }
+
+  head (path, options={}) {
+    options.url = path
+    options.method = 'HEAD'
+    return this.agent(options)
   }
-  head (path) {
-    return this.generalRequestSettings(superagent.head(path))
+  get (path, options={}) {
+    options.url = path
+    options.method = 'GET'
+    return this.agent(options)
   }
-  get (path) {
-    return this.generalRequestSettings(superagent.get(path))
+  post (path, options={}) {
+    options.url = path
+    options.method = 'POST'
+    return this.agent(options)
   }
-  post (path) {
-    return this.generalRequestSettings(superagent.post(path))
+  delete (path, options={}) {
+    options.url = path
+    options.method = 'DELETE'
+    return this.agent(options)
   }
-  delete (path) {
-    return this.generalRequestSettings(superagent.delete(path))
-  }
-  put (path) {
-    return this.generalRequestSettings(superagent.put(path))
+  put (path, options={}) {
+    options.url = path
+    options.method = 'PUT'
+    return this.agent(options)
   }
 }

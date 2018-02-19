@@ -1,7 +1,18 @@
-import superagentMockConfig from './superagent-mock-config';
-let superagent = RealSavvy.Client.connection.agent;
-import mockSuperagent from 'superagent-mock';
-mockSuperagent(superagent, superagentMockConfig);
+RealSavvy.Client.connection.agent = {
+  create: function(baseOptions){
+    return function(callOptions){
+      return new Promise((resolve, reject) => {
+        resolve(
+          {
+            settings: baseOptions,
+            request: callOptions,
+            body: window.__fixtures__['jsonapi']
+          }
+        );
+      });
+    }
+  }
+}
 
 import complexShowTests from './helper/complex_show_tests'
 import createTests from './helper/create_tests'
@@ -78,28 +89,28 @@ describe('RealSavvyClient', () => {
       uninviteTests.call(this, getClient, adapterPath);
 
       it('#add', (done) => {
-        getClient()[adapterPath].add({id: 5, property_ids: [sampleComplexId]}).end((err, res) => {
+        getClient()[adapterPath].add({id: 5, property_ids: [sampleComplexId]}).then(res => {
           assert.exists(res.body)
           done();
         });
       });
 
       it('#remove', (done) => {
-        getClient()[adapterPath].remove({id: 5, property_ids: [sampleComplexId]}).end((err, res) => {
+        getClient()[adapterPath].remove({id: 5, property_ids: [sampleComplexId]}).then(res => {
           assert.exists(res.body)
           done();
         });
       });
 
       it('#search', (done) => {
-        getClient()[adapterPath].search({id: 5, filter: filter, market_id: market_id, page: page}).end((err, res) => {
+        getClient()[adapterPath].search({id: 5, filter: filter, market_id: market_id, page: page}).then(res => {
           assert.exists(res.body)
           done();
         });
       });
 
       it('#cluster', (done) => {
-        getClient()[adapterPath].cluster({id: 5, filter: filter, market_id: market_id, page: page}).end((err, res) => {
+        getClient()[adapterPath].cluster({id: 5, filter: filter, market_id: market_id, page: page}).then(res => {
           assert.exists(res.body)
           done();
         });
@@ -130,14 +141,14 @@ describe('RealSavvyClient', () => {
       complexShowTests.call(this, getClient, adapterPath);
 
       it('#search', (done) => {
-        getClient()[adapterPath].search({filter: filter, market_id: market_id, page: page}).end((err, res) => {
+        getClient()[adapterPath].search({filter: filter, market_id: market_id, page: page}).then(res => {
           assert.exists(res.body)
           done();
         });
       });
 
       it('#cluster', (done) => {
-        getClient()[adapterPath].cluster({filter: filter, market_id: market_id, page: page}).end((err, res) => {
+        getClient()[adapterPath].cluster({filter: filter, market_id: market_id, page: page}).then(res => {
           assert.exists(res.body)
           done();
         });
@@ -159,14 +170,14 @@ describe('RealSavvyClient', () => {
       uninviteTests.call(this, getClient, adapterPath);
 
       it('#search', (done) => {
-        getClient()[adapterPath].search({id: 5, filter: filter, market_id: market_id, page: page}).end((err, res) => {
+        getClient()[adapterPath].search({id: 5, filter: filter, market_id: market_id, page: page}).then(res => {
           assert.exists(res.body)
           done();
         });
       });
 
       it('#cluster', (done) => {
-        getClient()[adapterPath].cluster({id: 5, filter: filter, market_id: market_id, page: page}).end((err, res) => {
+        getClient()[adapterPath].cluster({id: 5, filter: filter, market_id: market_id, page: page}).then(res => {
           assert.exists(res.body)
           done();
         });

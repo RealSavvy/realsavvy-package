@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Tue Feb 13 2018 17:47:19 GMT-0600 (CST)
 
-let webpackConfig = require('./webpack.config.js');
+let webpackConfig = require('./webpack.config.js')[0];
 webpackConfig.entry = null;
 
 module.exports = function(config) {
@@ -21,7 +21,6 @@ module.exports = function(config) {
       'test/fixtures/**/*.json',
       'test/helper/**/*.js',
       'test/config/**/*.js',
-      'node_modules/superagent-mock/**/*.js',
       {pattern: 'src/*/*.js', included: false},
       'src/index.js',
       'test/**/*.spec.js',
@@ -40,7 +39,6 @@ module.exports = function(config) {
       'test/**/*.spec.js': ['babel'],
       'test/config/**/*.js': ['babel'],
       'test/helper/**/*.js': ['babel'],
-      'node_modules/superagent-mock/**/*.js': ['babel'],
       'test/fixtures/**/*.json': ['json_fixtures'],
       'src/**/*.js': ['eslint'],
     },
