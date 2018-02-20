@@ -16,7 +16,7 @@ let clientConfig = {
   module: {
     rules: [
       {
-        test: /src\/\.js$/,
+        test: /src\/.*\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -41,6 +41,20 @@ let serverConfig = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     libraryTarget: 'umd',
+  },
+  module: {
+    rules: [
+      {
+        test: /src\/.*\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015'],
+          }
+        }
+      }
+    ]
   }
 }
 

@@ -385,70 +385,196 @@ module.exports = {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__concern_delegate_to_connection__ = __webpack_require__(55);
 
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0__concern_delegate_to_connection__["a" /* default */])(
-  class Base {
-    constructor ({connection = null}) {
-      this.connection = connection
-    }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _delegate_to_connection = __webpack_require__(55);
+
+var _delegate_to_connection2 = _interopRequireDefault(_delegate_to_connection);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var AbstractBase = function AbstractBase(_ref) {
+  var _ref$connection = _ref.connection,
+      connection = _ref$connection === undefined ? null : _ref$connection;
+
+  _classCallCheck(this, AbstractBase);
+
+  this.connection = connection;
+};
+
+var Base = function (_DelegateToConnection) {
+  _inherits(Base, _DelegateToConnection);
+
+  function Base() {
+    _classCallCheck(this, Base);
+
+    return _possibleConstructorReturn(this, (Base.__proto__ || Object.getPrototypeOf(Base)).apply(this, arguments));
   }
-));
 
+  return Base;
+}((0, _delegate_to_connection2.default)(AbstractBase));
+
+exports.default = Base;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ((superclass) => class extends superclass {
-  index (options = {}) {
-    return this.get(``, {params: options})
-  }
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = function (superclass) {
+  return function (_superclass) {
+    _inherits(_class, _superclass);
+
+    function _class() {
+      _classCallCheck(this, _class);
+
+      return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+    }
+
+    _createClass(_class, [{
+      key: "index",
+      value: function index() {
+        var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        return this.get("", { params: options });
+      }
+    }]);
+
+    return _class;
+  }(superclass);
+};
 
 /***/ }),
 /* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ((superclass) => class extends superclass {
-  show ({complexId = null, feed = null, key = null}) {
-    if (!feed && !key && complexId) {
-      let complexIdParts = complexId.split('~')
-      feed = complexIdParts[0]
-      key = complexIdParts[1]
-    }
-    return this.get(`/${feed}/${key}`)
-  }
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = function (superclass) {
+  return function (_superclass) {
+    _inherits(_class, _superclass);
+
+    function _class() {
+      _classCallCheck(this, _class);
+
+      return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+    }
+
+    _createClass(_class, [{
+      key: 'show',
+      value: function show(_ref) {
+        var _ref$complexId = _ref.complexId,
+            complexId = _ref$complexId === undefined ? null : _ref$complexId,
+            _ref$feed = _ref.feed,
+            feed = _ref$feed === undefined ? null : _ref$feed,
+            _ref$key = _ref.key,
+            key = _ref$key === undefined ? null : _ref$key;
+
+        if (!feed && !key && complexId) {
+          var complexIdParts = complexId.split('~');
+          feed = complexIdParts[0];
+          key = complexIdParts[1];
+        }
+        return this.get('/' + feed + '/' + key);
+      }
+    }]);
+
+    return _class;
+  }(superclass);
+};
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__concern_index_for_adapter__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_create_for_adapter__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__concern_show_for_adapter__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__concern_update_for_adapter__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__concern_destroy_for_adapter__ = __webpack_require__(61);
 
 
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ((superclass) => class extends Object(__WEBPACK_IMPORTED_MODULE_4__concern_destroy_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_3__concern_update_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_2__concern_show_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_1__concern_create_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_0__concern_index_for_adapter__["a" /* default */])(superclass))))) {
-  // Empty class
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
+var _index_for_adapter = __webpack_require__(2);
+
+var _index_for_adapter2 = _interopRequireDefault(_index_for_adapter);
+
+var _create_for_adapter = __webpack_require__(59);
+
+var _create_for_adapter2 = _interopRequireDefault(_create_for_adapter);
+
+var _show_for_adapter = __webpack_require__(18);
+
+var _show_for_adapter2 = _interopRequireDefault(_show_for_adapter);
+
+var _update_for_adapter = __webpack_require__(60);
+
+var _update_for_adapter2 = _interopRequireDefault(_update_for_adapter);
+
+var _destroy_for_adapter = __webpack_require__(61);
+
+var _destroy_for_adapter2 = _interopRequireDefault(_destroy_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = function (superclass) {
+  return function (_DestroyForAdapter) {
+    _inherits(_class, _DestroyForAdapter);
+
+    function _class() {
+      _classCallCheck(this, _class);
+
+      return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+    }
+
+    return _class;
+  }((0, _destroy_for_adapter2.default)((0, _update_for_adapter2.default)((0, _show_for_adapter2.default)((0, _create_for_adapter2.default)((0, _index_for_adapter2.default)(superclass))))));
+};
 
 /***/ }),
 /* 5 */
@@ -1290,210 +1416,405 @@ module.exports = Cancel;
 
 /***/ }),
 /* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ((superclass) => class extends superclass {
-  show ({id = null}) {
-    return this.get(`/${id}`)
-  }
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = function (superclass) {
+  return function (_superclass) {
+    _inherits(_class, _superclass);
+
+    function _class() {
+      _classCallCheck(this, _class);
+
+      return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+    }
+
+    _createClass(_class, [{
+      key: "show",
+      value: function show(_ref) {
+        var _ref$id = _ref.id,
+            id = _ref$id === undefined ? null : _ref$id;
+
+        return this.get("/" + id);
+      }
+    }]);
+
+    return _class;
+  }(superclass);
+};
 
 /***/ }),
 /* 19 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ((superclass) => class extends superclass {
-  invite ({id = null, email = null}) {
-    return this.put(`/${id}/invite`, {data: {email: email}})
-  }
 
-  acceptInvite ({id = null, given = null}) {
-    return this.put(`/${id}/accept_invite`, {data: {given: given}})
-  }
 
-  uninvite ({id = null, email = null}) {
-    return this.delete(`/${id}/uninvite`, {data: {email: email}})
-  }
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = function (superclass) {
+  return function (_superclass) {
+    _inherits(_class, _superclass);
+
+    function _class() {
+      _classCallCheck(this, _class);
+
+      return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+    }
+
+    _createClass(_class, [{
+      key: "invite",
+      value: function invite(_ref) {
+        var _ref$id = _ref.id,
+            id = _ref$id === undefined ? null : _ref$id,
+            _ref$email = _ref.email,
+            email = _ref$email === undefined ? null : _ref$email;
+
+        return this.put("/" + id + "/invite", { data: { email: email } });
+      }
+    }, {
+      key: "acceptInvite",
+      value: function acceptInvite(_ref2) {
+        var _ref2$id = _ref2.id,
+            id = _ref2$id === undefined ? null : _ref2$id,
+            _ref2$given = _ref2.given,
+            given = _ref2$given === undefined ? null : _ref2$given;
+
+        return this.put("/" + id + "/accept_invite", { data: { given: given } });
+      }
+    }, {
+      key: "uninvite",
+      value: function uninvite(_ref3) {
+        var _ref3$id = _ref3.id,
+            id = _ref3$id === undefined ? null : _ref3$id,
+            _ref3$email = _ref3.email,
+            email = _ref3$email === undefined ? null : _ref3$email;
+
+        return this.delete("/" + id + "/uninvite", { data: { email: email } });
+      }
+    }]);
+
+    return _class;
+  }(superclass);
+};
 
 /***/ }),
 /* 20 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_client__ = __webpack_require__(21);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Client", function() { return __WEBPACK_IMPORTED_MODULE_0__app_client__["a"]; });
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Client = undefined;
 
+var _client = __webpack_require__(21);
 
+var _client2 = _interopRequireDefault(_client);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Client = _client2.default;
 
 /***/ }),
 /* 21 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__connection__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__adapter_agent_profile__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adapter_agent__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__adapter_broker_office__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__adapter_collection__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__adapter_market__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__adapter_open_house__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__adapter_property__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__adapter_saved_search__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__adapter_site__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__adapter_user__ = __webpack_require__(67);
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 // Import Adapters
 
 
+var _connection = __webpack_require__(22);
 
+var _connection2 = _interopRequireDefault(_connection);
 
+var _agent_profile = __webpack_require__(54);
 
+var _agent_profile2 = _interopRequireDefault(_agent_profile);
 
+var _agent = __webpack_require__(56);
 
+var _agent2 = _interopRequireDefault(_agent);
 
+var _broker_office = __webpack_require__(57);
 
+var _broker_office2 = _interopRequireDefault(_broker_office);
 
+var _collection = __webpack_require__(58);
 
-const adapaterLookup = {
-  agent_profiles: __WEBPACK_IMPORTED_MODULE_1__adapter_agent_profile__["a" /* default */],
-  agents: __WEBPACK_IMPORTED_MODULE_2__adapter_agent__["a" /* default */],
-  broker_offices: __WEBPACK_IMPORTED_MODULE_3__adapter_broker_office__["a" /* default */],
-  collections: __WEBPACK_IMPORTED_MODULE_4__adapter_collection__["a" /* default */],
-  markets: __WEBPACK_IMPORTED_MODULE_5__adapter_market__["a" /* default */],
-  open_houses: __WEBPACK_IMPORTED_MODULE_6__adapter_open_house__["a" /* default */],
-  properties: __WEBPACK_IMPORTED_MODULE_7__adapter_property__["a" /* default */],
-  saved_searches: __WEBPACK_IMPORTED_MODULE_8__adapter_saved_search__["a" /* default */],
-  sites: __WEBPACK_IMPORTED_MODULE_9__adapter_site__["a" /* default */],
-  users: __WEBPACK_IMPORTED_MODULE_10__adapter_user__["a" /* default */]
-}
+var _collection2 = _interopRequireDefault(_collection);
 
-class Client {
-  constructor ({token = null, apiUrl = 'https://api.realsavvy.com'}) {
-    this.token = token
-    this.apiUrl = apiUrl
-    this.adapters = {}
+var _market = __webpack_require__(62);
+
+var _market2 = _interopRequireDefault(_market);
+
+var _open_house = __webpack_require__(63);
+
+var _open_house2 = _interopRequireDefault(_open_house);
+
+var _property = __webpack_require__(64);
+
+var _property2 = _interopRequireDefault(_property);
+
+var _saved_search = __webpack_require__(65);
+
+var _saved_search2 = _interopRequireDefault(_saved_search);
+
+var _site = __webpack_require__(66);
+
+var _site2 = _interopRequireDefault(_site);
+
+var _suggestion = __webpack_require__(67);
+
+var _suggestion2 = _interopRequireDefault(_suggestion);
+
+var _user = __webpack_require__(68);
+
+var _user2 = _interopRequireDefault(_user);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var adapaterLookup = {
+  agent_profiles: _agent_profile2.default,
+  agents: _agent2.default,
+  broker_offices: _broker_office2.default,
+  collections: _collection2.default,
+  markets: _market2.default,
+  open_houses: _open_house2.default,
+  properties: _property2.default,
+  saved_searches: _saved_search2.default,
+  sites: _site2.default,
+  suggestions: _suggestion2.default,
+  users: _user2.default
+};
+
+var Client = function () {
+  function Client(_ref) {
+    var _ref$token = _ref.token,
+        token = _ref$token === undefined ? null : _ref$token,
+        _ref$apiUrl = _ref.apiUrl,
+        apiUrl = _ref$apiUrl === undefined ? 'https://api.realsavvy.com' : _ref$apiUrl;
+
+    _classCallCheck(this, Client);
+
+    this.token = token;
+    this.apiUrl = apiUrl;
+    this.adapters = {};
   }
 
-  static get connection () { return __WEBPACK_IMPORTED_MODULE_0__connection__["a" /* default */] }
+  _createClass(Client, [{
+    key: 'fetchAdapater',
+    value: function fetchAdapater(name) {
+      this.adapters[name] = this.adapters[name] || new adapaterLookup[name]({ connection: this.connection });
+      return this.adapters[name];
+    }
+  }, {
+    key: 'connection',
+    get: function get() {
+      /* eslint-disable new-cap */
+      this.connectionObject = this.connectionObject || new this.constructor.connection({ client: this });
+      /* eslint-enable new-cap */
+      return this.connectionObject;
+    }
+  }, {
+    key: 'agentProfiles',
+    get: function get() {
+      return this.fetchAdapater('agent_profiles');
+    }
+  }, {
+    key: 'agents',
+    get: function get() {
+      return this.fetchAdapater('agents');
+    }
+  }, {
+    key: 'brokerOffices',
+    get: function get() {
+      return this.fetchAdapater('broker_offices');
+    }
+  }, {
+    key: 'collections',
+    get: function get() {
+      return this.fetchAdapater('collections');
+    }
+  }, {
+    key: 'markets',
+    get: function get() {
+      return this.fetchAdapater('markets');
+    }
+  }, {
+    key: 'openHouses',
+    get: function get() {
+      return this.fetchAdapater('open_houses');
+    }
+  }, {
+    key: 'properties',
+    get: function get() {
+      return this.fetchAdapater('properties');
+    }
+  }, {
+    key: 'savedSearches',
+    get: function get() {
+      return this.fetchAdapater('saved_searches');
+    }
+  }, {
+    key: 'sites',
+    get: function get() {
+      return this.fetchAdapater('sites');
+    }
+  }, {
+    key: 'suggestions',
+    get: function get() {
+      return this.fetchAdapater('suggestions');
+    }
+  }, {
+    key: 'users',
+    get: function get() {
+      return this.fetchAdapater('users');
+    }
+  }], [{
+    key: 'connection',
+    get: function get() {
+      return _connection2.default;
+    }
+  }]);
 
-  fetchAdapater (name) {
-    this.adapters[name] = this.adapters[name] || new adapaterLookup[name]({connection: this.connection})
-    return this.adapters[name]
-  }
+  return Client;
+}();
 
-  get connection () {
-    /* eslint-disable new-cap */
-    this.connectionObject = this.connectionObject || new this.constructor.connection({client: this})
-    /* eslint-enable new-cap */
-    return this.connectionObject
-  }
-
-  get agentProfiles () {
-    return this.fetchAdapater('agent_profiles')
-  }
-
-  get agents () {
-    return this.fetchAdapater('agents')
-  }
-
-  get brokerOffices () {
-    return this.fetchAdapater('broker_offices')
-  }
-
-  get collections () {
-    return this.fetchAdapater('collections')
-  }
-
-  get markets () {
-    return this.fetchAdapater('markets')
-  }
-
-  get openHouses () {
-    return this.fetchAdapater('open_houses')
-  }
-
-  get properties () {
-    return this.fetchAdapater('properties')
-  }
-
-  get savedSearches () {
-    return this.fetchAdapater('saved_searches')
-  }
-
-  get sites () {
-    return this.fetchAdapater('sites')
-  }
-
-  get users () {
-    return this.fetchAdapater('users')
-  }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Client;
-
-
+exports.default = Client;
 
 /***/ }),
 /* 22 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_es6_promise_auto__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_es6_promise_auto___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_es6_promise_auto__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-class Connection {
-  constructor ({client = null}) {
-    this.client = client
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(23);
+
+var _axios = __webpack_require__(25);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Connection = function () {
+  function Connection(_ref) {
+    var _ref$client = _ref.client,
+        client = _ref$client === undefined ? null : _ref$client;
+
+    _classCallCheck(this, Connection);
+
+    this.client = client;
     this.agent = this.constructor.agent.create({
       baseURL: this.client.apiUrl,
-      headers: {'Authorization': 'Bearer ' + this.client.token}
-    })
+      headers: { 'Authorization': 'Bearer ' + this.client.token }
+    });
   }
 
-  static get agent () { return this.agentOverwrite || __WEBPACK_IMPORTED_MODULE_1_axios___default.a }
-  static set agent (newAgent) { this.agentOverwrite = newAgent }
+  _createClass(Connection, [{
+    key: 'head',
+    value: function head(path) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-  head (path, options = {}) {
-    options.url = path
-    options.method = 'HEAD'
-    return this.agent(options)
-  }
-  get (path, options = {}) {
-    options.url = path
-    options.method = 'GET'
-    return this.agent(options)
-  }
-  post (path, options = {}) {
-    options.url = path
-    options.method = 'POST'
-    return this.agent(options)
-  }
-  delete (path, options = {}) {
-    options.url = path
-    options.method = 'DELETE'
-    return this.agent(options)
-  }
-  put (path, options = {}) {
-    options.url = path
-    options.method = 'PUT'
-    return this.agent(options)
-  }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Connection;
+      options.url = path;
+      options.method = 'HEAD';
+      return this.agent(options);
+    }
+  }, {
+    key: 'get',
+    value: function get(path) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
+      options.url = path;
+      options.method = 'GET';
+      return this.agent(options);
+    }
+  }, {
+    key: 'post',
+    value: function post(path) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
+      options.url = path;
+      options.method = 'POST';
+      return this.agent(options);
+    }
+  }, {
+    key: 'delete',
+    value: function _delete(path) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      options.url = path;
+      options.method = 'DELETE';
+      return this.agent(options);
+    }
+  }, {
+    key: 'put',
+    value: function put(path) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      options.url = path;
+      options.method = 'PUT';
+      return this.agent(options);
+    }
+  }], [{
+    key: 'agent',
+    get: function get() {
+      return this.agentOverwrite || _axios2.default;
+    },
+    set: function set(newAgent) {
+      this.agentOverwrite = newAgent;
+    }
+  }]);
+
+  return Connection;
+}();
+
+exports.default = Connection;
 
 /***/ }),
 /* 23 */
@@ -4529,302 +4850,924 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 54 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_complex_show_for_adapter__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__concern_index_for_adapter__ = __webpack_require__(2);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class AgentProfile extends Object(__WEBPACK_IMPORTED_MODULE_2__concern_index_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_1__concern_complex_show_for_adapter__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */])) {
-  static get resourceType () { return 'agent_profiles' }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = AgentProfile;
+var _base = __webpack_require__(1);
 
+var _base2 = _interopRequireDefault(_base);
 
+var _complex_show_for_adapter = __webpack_require__(3);
+
+var _complex_show_for_adapter2 = _interopRequireDefault(_complex_show_for_adapter);
+
+var _index_for_adapter = __webpack_require__(2);
+
+var _index_for_adapter2 = _interopRequireDefault(_index_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AgentProfile = function (_IndexForAdapter) {
+  _inherits(AgentProfile, _IndexForAdapter);
+
+  function AgentProfile() {
+    _classCallCheck(this, AgentProfile);
+
+    return _possibleConstructorReturn(this, (AgentProfile.__proto__ || Object.getPrototypeOf(AgentProfile)).apply(this, arguments));
+  }
+
+  _createClass(AgentProfile, null, [{
+    key: 'resourceType',
+    get: function get() {
+      return 'agent_profiles';
+    }
+  }]);
+
+  return AgentProfile;
+}((0, _index_for_adapter2.default)((0, _complex_show_for_adapter2.default)(_base2.default)));
+
+exports.default = AgentProfile;
 
 /***/ }),
 /* 55 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ((superclass) => class extends superclass {
-  static get rootApiPath () { return '/api/v3/' }
 
-  static get resourceTypeApiPath () { return this.rootApiPath + this.resourceType }
 
-  head (actionPath, options = {}) {
-    return this.connection.head(this.constructor.resourceTypeApiPath + actionPath, options)
-  }
-  get (actionPath, options = {}) {
-    return this.connection.get(this.constructor.resourceTypeApiPath + actionPath, options)
-  }
-  post (actionPath, options = {}) {
-    return this.connection.post(this.constructor.resourceTypeApiPath + actionPath, options)
-  }
-  delete (actionPath, options = {}) {
-    return this.connection.delete(this.constructor.resourceTypeApiPath + actionPath, options)
-  }
-  put (actionPath, options = {}) {
-    return this.connection.put(this.constructor.resourceTypeApiPath + actionPath, options)
-  }
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = function (superclass) {
+  return function (_superclass) {
+    _inherits(_class, _superclass);
+
+    function _class() {
+      _classCallCheck(this, _class);
+
+      return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+    }
+
+    _createClass(_class, [{
+      key: 'head',
+      value: function head(actionPath) {
+        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+        return this.connection.head(this.constructor.resourceTypeApiPath + actionPath, options);
+      }
+    }, {
+      key: 'get',
+      value: function get(actionPath) {
+        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+        return this.connection.get(this.constructor.resourceTypeApiPath + actionPath, options);
+      }
+    }, {
+      key: 'post',
+      value: function post(actionPath) {
+        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+        return this.connection.post(this.constructor.resourceTypeApiPath + actionPath, options);
+      }
+    }, {
+      key: 'delete',
+      value: function _delete(actionPath) {
+        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+        return this.connection.delete(this.constructor.resourceTypeApiPath + actionPath, options);
+      }
+    }, {
+      key: 'put',
+      value: function put(actionPath) {
+        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+        return this.connection.put(this.constructor.resourceTypeApiPath + actionPath, options);
+      }
+    }], [{
+      key: 'rootApiPath',
+      get: function get() {
+        return '/api/v3/';
+      }
+    }, {
+      key: 'resourceTypeApiPath',
+      get: function get() {
+        return this.rootApiPath + this.resourceType;
+      }
+    }]);
+
+    return _class;
+  }(superclass);
+};
 
 /***/ }),
 /* 56 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_show_for_adapter__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__concern_index_for_adapter__ = __webpack_require__(2);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class Agent extends Object(__WEBPACK_IMPORTED_MODULE_2__concern_index_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_1__concern_show_for_adapter__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */])) {
-  static get resourceType () { return 'agents' }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Agent;
+var _base = __webpack_require__(1);
 
+var _base2 = _interopRequireDefault(_base);
 
+var _show_for_adapter = __webpack_require__(18);
+
+var _show_for_adapter2 = _interopRequireDefault(_show_for_adapter);
+
+var _index_for_adapter = __webpack_require__(2);
+
+var _index_for_adapter2 = _interopRequireDefault(_index_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Agent = function (_IndexForAdapter) {
+  _inherits(Agent, _IndexForAdapter);
+
+  function Agent() {
+    _classCallCheck(this, Agent);
+
+    return _possibleConstructorReturn(this, (Agent.__proto__ || Object.getPrototypeOf(Agent)).apply(this, arguments));
+  }
+
+  _createClass(Agent, null, [{
+    key: 'resourceType',
+    get: function get() {
+      return 'agents';
+    }
+  }]);
+
+  return Agent;
+}((0, _index_for_adapter2.default)((0, _show_for_adapter2.default)(_base2.default)));
+
+exports.default = Agent;
 
 /***/ }),
 /* 57 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_complex_show_for_adapter__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__concern_index_for_adapter__ = __webpack_require__(2);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class BrokerOffice extends Object(__WEBPACK_IMPORTED_MODULE_2__concern_index_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_1__concern_complex_show_for_adapter__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */])) {
-  static get resourceType () { return 'broker_offices' }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = BrokerOffice;
+var _base = __webpack_require__(1);
 
+var _base2 = _interopRequireDefault(_base);
 
+var _complex_show_for_adapter = __webpack_require__(3);
+
+var _complex_show_for_adapter2 = _interopRequireDefault(_complex_show_for_adapter);
+
+var _index_for_adapter = __webpack_require__(2);
+
+var _index_for_adapter2 = _interopRequireDefault(_index_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BrokerOffice = function (_IndexForAdapter) {
+  _inherits(BrokerOffice, _IndexForAdapter);
+
+  function BrokerOffice() {
+    _classCallCheck(this, BrokerOffice);
+
+    return _possibleConstructorReturn(this, (BrokerOffice.__proto__ || Object.getPrototypeOf(BrokerOffice)).apply(this, arguments));
+  }
+
+  _createClass(BrokerOffice, null, [{
+    key: 'resourceType',
+    get: function get() {
+      return 'broker_offices';
+    }
+  }]);
+
+  return BrokerOffice;
+}((0, _index_for_adapter2.default)((0, _complex_show_for_adapter2.default)(_base2.default)));
+
+exports.default = BrokerOffice;
 
 /***/ }),
 /* 58 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_crud_for_adapter__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__concern_invite_actions_for_adapter__ = __webpack_require__(19);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class Collection extends Object(__WEBPACK_IMPORTED_MODULE_2__concern_invite_actions_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_1__concern_crud_for_adapter__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */])) {
-  static get resourceType () { return 'collections' }
+var _base = __webpack_require__(1);
 
-  add ({id = null, propertyIds = null}) {
-    propertyIds = propertyIds || []
-    return this.put(`/${id}/add`, {data: {property_ids: propertyIds}})
+var _base2 = _interopRequireDefault(_base);
+
+var _crud_for_adapter = __webpack_require__(4);
+
+var _crud_for_adapter2 = _interopRequireDefault(_crud_for_adapter);
+
+var _invite_actions_for_adapter = __webpack_require__(19);
+
+var _invite_actions_for_adapter2 = _interopRequireDefault(_invite_actions_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Collection = function (_InvitesActionsForAda) {
+  _inherits(Collection, _InvitesActionsForAda);
+
+  function Collection() {
+    _classCallCheck(this, Collection);
+
+    return _possibleConstructorReturn(this, (Collection.__proto__ || Object.getPrototypeOf(Collection)).apply(this, arguments));
   }
 
-  remove ({id = null, propertyIds = null}) {
-    propertyIds = propertyIds || []
-    return this.delete(`/${id}/remove`, {data: {property_ids: propertyIds}})
-  }
+  _createClass(Collection, [{
+    key: 'add',
+    value: function add(_ref) {
+      var _ref$id = _ref.id,
+          id = _ref$id === undefined ? null : _ref$id,
+          _ref$propertyIds = _ref.propertyIds,
+          propertyIds = _ref$propertyIds === undefined ? null : _ref$propertyIds;
 
-  search ({id = null, filter = null, marketId = null, page = null}) {
-    filter = filter || {}
-    page = page || {}
-    return this.post(`/${id}/properties/search`, {data: {filter: filter, market_id: marketId, page: page}})
-  }
+      propertyIds = propertyIds || [];
+      return this.put('/' + id + '/add', { data: { property_ids: propertyIds } });
+    }
+  }, {
+    key: 'remove',
+    value: function remove(_ref2) {
+      var _ref2$id = _ref2.id,
+          id = _ref2$id === undefined ? null : _ref2$id,
+          _ref2$propertyIds = _ref2.propertyIds,
+          propertyIds = _ref2$propertyIds === undefined ? null : _ref2$propertyIds;
 
-  cluster ({id = null, filter = null, marketId = null, page = null}) {
-    filter = filter || {}
-    page = page || {}
-    return this.post(`/${id}/properties/map/clusters`, {data: {filter: filter, market_id: marketId, page: page}})
-  }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Collection;
+      propertyIds = propertyIds || [];
+      return this.delete('/' + id + '/remove', { data: { property_ids: propertyIds } });
+    }
+  }, {
+    key: 'search',
+    value: function search(_ref3) {
+      var _ref3$id = _ref3.id,
+          id = _ref3$id === undefined ? null : _ref3$id,
+          _ref3$filter = _ref3.filter,
+          filter = _ref3$filter === undefined ? null : _ref3$filter,
+          _ref3$marketId = _ref3.marketId,
+          marketId = _ref3$marketId === undefined ? null : _ref3$marketId,
+          _ref3$page = _ref3.page,
+          page = _ref3$page === undefined ? null : _ref3$page;
 
+      filter = filter || {};
+      page = page || {};
+      return this.post('/' + id + '/properties/search', { data: { filter: filter, market_id: marketId, page: page } });
+    }
+  }, {
+    key: 'cluster',
+    value: function cluster(_ref4) {
+      var _ref4$id = _ref4.id,
+          id = _ref4$id === undefined ? null : _ref4$id,
+          _ref4$filter = _ref4.filter,
+          filter = _ref4$filter === undefined ? null : _ref4$filter,
+          _ref4$marketId = _ref4.marketId,
+          marketId = _ref4$marketId === undefined ? null : _ref4$marketId,
+          _ref4$page = _ref4.page,
+          page = _ref4$page === undefined ? null : _ref4$page;
 
+      filter = filter || {};
+      page = page || {};
+      return this.post('/' + id + '/properties/map/clusters', { data: { filter: filter, market_id: marketId, page: page } });
+    }
+  }], [{
+    key: 'resourceType',
+    get: function get() {
+      return 'collections';
+    }
+  }]);
+
+  return Collection;
+}((0, _invite_actions_for_adapter2.default)((0, _crud_for_adapter2.default)(_base2.default)));
+
+exports.default = Collection;
 
 /***/ }),
 /* 59 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ((superclass) => class extends superclass {
-  create (attributes = {}) {
-    return this.post(``, {data: {data: {attributes: attributes}}})
-  }
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = function (superclass) {
+  return function (_superclass) {
+    _inherits(_class, _superclass);
+
+    function _class() {
+      _classCallCheck(this, _class);
+
+      return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+    }
+
+    _createClass(_class, [{
+      key: "create",
+      value: function create() {
+        var attributes = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        return this.post("", { data: { data: { attributes: attributes } } });
+      }
+    }]);
+
+    return _class;
+  }(superclass);
+};
 
 /***/ }),
 /* 60 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ((superclass) => class extends superclass {
-  update ({id = null, attributes = null}) {
-    attributes = attributes || {}
-    return this.put(`/${id}`, {data: {data: {attributes: attributes}}})
-  }
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = function (superclass) {
+  return function (_superclass) {
+    _inherits(_class, _superclass);
+
+    function _class() {
+      _classCallCheck(this, _class);
+
+      return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+    }
+
+    _createClass(_class, [{
+      key: "update",
+      value: function update(_ref) {
+        var _ref$id = _ref.id,
+            id = _ref$id === undefined ? null : _ref$id,
+            _ref$attributes = _ref.attributes,
+            attributes = _ref$attributes === undefined ? null : _ref$attributes;
+
+        attributes = attributes || {};
+        return this.put("/" + id, { data: { data: { attributes: attributes } } });
+      }
+    }]);
+
+    return _class;
+  }(superclass);
+};
 
 /***/ }),
 /* 61 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ((superclass) => class extends superclass {
-  destroy ({id = null}) {
-    return this.delete(`/${id}`)
-  }
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = function (superclass) {
+  return function (_superclass) {
+    _inherits(_class, _superclass);
+
+    function _class() {
+      _classCallCheck(this, _class);
+
+      return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+    }
+
+    _createClass(_class, [{
+      key: "destroy",
+      value: function destroy(_ref) {
+        var _ref$id = _ref.id,
+            id = _ref$id === undefined ? null : _ref$id;
+
+        return this.delete("/" + id);
+      }
+    }]);
+
+    return _class;
+  }(superclass);
+};
 
 /***/ }),
 /* 62 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_crud_for_adapter__ = __webpack_require__(4);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-class Market extends Object(__WEBPACK_IMPORTED_MODULE_1__concern_crud_for_adapter__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */]) {
-  static get resourceType () { return 'markets' }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Market;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _base = __webpack_require__(1);
 
+var _base2 = _interopRequireDefault(_base);
+
+var _crud_for_adapter = __webpack_require__(4);
+
+var _crud_for_adapter2 = _interopRequireDefault(_crud_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Market = function (_CrudForAdapter) {
+  _inherits(Market, _CrudForAdapter);
+
+  function Market() {
+    _classCallCheck(this, Market);
+
+    return _possibleConstructorReturn(this, (Market.__proto__ || Object.getPrototypeOf(Market)).apply(this, arguments));
+  }
+
+  _createClass(Market, null, [{
+    key: 'resourceType',
+    get: function get() {
+      return 'markets';
+    }
+  }]);
+
+  return Market;
+}((0, _crud_for_adapter2.default)(_base2.default));
+
+exports.default = Market;
 
 /***/ }),
 /* 63 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_complex_show_for_adapter__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__concern_index_for_adapter__ = __webpack_require__(2);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class OpenHouse extends Object(__WEBPACK_IMPORTED_MODULE_2__concern_index_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_1__concern_complex_show_for_adapter__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */])) {
-  static get resourceType () { return 'open_houses' }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = OpenHouse;
+var _base = __webpack_require__(1);
 
+var _base2 = _interopRequireDefault(_base);
 
+var _complex_show_for_adapter = __webpack_require__(3);
+
+var _complex_show_for_adapter2 = _interopRequireDefault(_complex_show_for_adapter);
+
+var _index_for_adapter = __webpack_require__(2);
+
+var _index_for_adapter2 = _interopRequireDefault(_index_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OpenHouse = function (_IndexForAdapter) {
+  _inherits(OpenHouse, _IndexForAdapter);
+
+  function OpenHouse() {
+    _classCallCheck(this, OpenHouse);
+
+    return _possibleConstructorReturn(this, (OpenHouse.__proto__ || Object.getPrototypeOf(OpenHouse)).apply(this, arguments));
+  }
+
+  _createClass(OpenHouse, null, [{
+    key: 'resourceType',
+    get: function get() {
+      return 'open_houses';
+    }
+  }]);
+
+  return OpenHouse;
+}((0, _index_for_adapter2.default)((0, _complex_show_for_adapter2.default)(_base2.default)));
+
+exports.default = OpenHouse;
 
 /***/ }),
 /* 64 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_complex_show_for_adapter__ = __webpack_require__(3);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-class Property extends Object(__WEBPACK_IMPORTED_MODULE_1__concern_complex_show_for_adapter__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */]) {
-  static get resourceType () { return 'properties' }
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  search ({filter = null, marketId = null, page = null}) {
-    filter = filter || {}
-    page = page || {}
-    return this.post(`/search`, {data: {filter: filter, market_id: marketId, page: page}})
+var _base = __webpack_require__(1);
+
+var _base2 = _interopRequireDefault(_base);
+
+var _complex_show_for_adapter = __webpack_require__(3);
+
+var _complex_show_for_adapter2 = _interopRequireDefault(_complex_show_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Property = function (_ComplexShowForAdapte) {
+  _inherits(Property, _ComplexShowForAdapte);
+
+  function Property() {
+    _classCallCheck(this, Property);
+
+    return _possibleConstructorReturn(this, (Property.__proto__ || Object.getPrototypeOf(Property)).apply(this, arguments));
   }
 
-  cluster ({filter = null, marketId = null, page = null}) {
-    filter = filter || {}
-    page = page || {}
-    return this.post(`/map/clusters`, {data: {filter: filter, market_id: marketId, page: page}})
-  }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Property;
+  _createClass(Property, [{
+    key: 'search',
+    value: function search(_ref) {
+      var _ref$filter = _ref.filter,
+          filter = _ref$filter === undefined ? null : _ref$filter,
+          _ref$marketId = _ref.marketId,
+          marketId = _ref$marketId === undefined ? null : _ref$marketId,
+          _ref$page = _ref.page,
+          page = _ref$page === undefined ? null : _ref$page;
 
+      filter = filter || {};
+      page = page || {};
+      return this.post('/search', { data: { filter: filter, market_id: marketId, page: page } });
+    }
+  }, {
+    key: 'cluster',
+    value: function cluster(_ref2) {
+      var _ref2$filter = _ref2.filter,
+          filter = _ref2$filter === undefined ? null : _ref2$filter,
+          _ref2$marketId = _ref2.marketId,
+          marketId = _ref2$marketId === undefined ? null : _ref2$marketId,
+          _ref2$page = _ref2.page,
+          page = _ref2$page === undefined ? null : _ref2$page;
 
+      filter = filter || {};
+      page = page || {};
+      return this.post('/map/clusters', { data: { filter: filter, market_id: marketId, page: page } });
+    }
+  }], [{
+    key: 'resourceType',
+    get: function get() {
+      return 'properties';
+    }
+  }]);
+
+  return Property;
+}((0, _complex_show_for_adapter2.default)(_base2.default));
+
+exports.default = Property;
 
 /***/ }),
 /* 65 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_crud_for_adapter__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__concern_invite_actions_for_adapter__ = __webpack_require__(19);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class SavedSearch extends Object(__WEBPACK_IMPORTED_MODULE_2__concern_invite_actions_for_adapter__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_1__concern_crud_for_adapter__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */])) {
-  static get resourceType () { return 'saved_searches' }
+var _base = __webpack_require__(1);
 
-  search ({id = null, filter = null, marketId = null, page = null}) {
-    filter = filter || {}
-    page = page || {}
-    return this.post(`/${id}/properties/search`, {data: {filter: filter, market_id: marketId, page: page}})
+var _base2 = _interopRequireDefault(_base);
+
+var _crud_for_adapter = __webpack_require__(4);
+
+var _crud_for_adapter2 = _interopRequireDefault(_crud_for_adapter);
+
+var _invite_actions_for_adapter = __webpack_require__(19);
+
+var _invite_actions_for_adapter2 = _interopRequireDefault(_invite_actions_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SavedSearch = function (_InvitesActionsForAda) {
+  _inherits(SavedSearch, _InvitesActionsForAda);
+
+  function SavedSearch() {
+    _classCallCheck(this, SavedSearch);
+
+    return _possibleConstructorReturn(this, (SavedSearch.__proto__ || Object.getPrototypeOf(SavedSearch)).apply(this, arguments));
   }
 
-  cluster ({id = null, filter = null, marketId = null, page = null}) {
-    filter = filter || {}
-    page = page || {}
-    return this.post(`/${id}/properties/map/clusters`, {data: {filter: filter, market_id: marketId, page: page}})
-  }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = SavedSearch;
+  _createClass(SavedSearch, [{
+    key: 'search',
+    value: function search(_ref) {
+      var _ref$id = _ref.id,
+          id = _ref$id === undefined ? null : _ref$id,
+          _ref$filter = _ref.filter,
+          filter = _ref$filter === undefined ? null : _ref$filter,
+          _ref$marketId = _ref.marketId,
+          marketId = _ref$marketId === undefined ? null : _ref$marketId,
+          _ref$page = _ref.page,
+          page = _ref$page === undefined ? null : _ref$page;
 
+      filter = filter || {};
+      page = page || {};
+      return this.post('/' + id + '/properties/search', { data: { filter: filter, market_id: marketId, page: page } });
+    }
+  }, {
+    key: 'cluster',
+    value: function cluster(_ref2) {
+      var _ref2$id = _ref2.id,
+          id = _ref2$id === undefined ? null : _ref2$id,
+          _ref2$filter = _ref2.filter,
+          filter = _ref2$filter === undefined ? null : _ref2$filter,
+          _ref2$marketId = _ref2.marketId,
+          marketId = _ref2$marketId === undefined ? null : _ref2$marketId,
+          _ref2$page = _ref2.page,
+          page = _ref2$page === undefined ? null : _ref2$page;
 
+      filter = filter || {};
+      page = page || {};
+      return this.post('/' + id + '/properties/map/clusters', { data: { filter: filter, market_id: marketId, page: page } });
+    }
+  }], [{
+    key: 'resourceType',
+    get: function get() {
+      return 'saved_searches';
+    }
+  }]);
+
+  return SavedSearch;
+}((0, _invite_actions_for_adapter2.default)((0, _crud_for_adapter2.default)(_base2.default)));
+
+exports.default = SavedSearch;
 
 /***/ }),
 /* 66 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
 
 
-class Site extends __WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */] {
-  static get resourceType () { return 'sites' }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-  me () {
-    return this.get('/me')
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _base = __webpack_require__(1);
+
+var _base2 = _interopRequireDefault(_base);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Site = function (_Base) {
+  _inherits(Site, _Base);
+
+  function Site() {
+    _classCallCheck(this, Site);
+
+    return _possibleConstructorReturn(this, (Site.__proto__ || Object.getPrototypeOf(Site)).apply(this, arguments));
   }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Site;
 
+  _createClass(Site, [{
+    key: 'me',
+    value: function me() {
+      return this.get('/me');
+    }
+  }], [{
+    key: 'resourceType',
+    get: function get() {
+      return 'sites';
+    }
+  }]);
 
+  return Site;
+}(_base2.default);
+
+exports.default = Site;
 
 /***/ }),
 /* 67 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__concern_crud_for_adapter__ = __webpack_require__(4);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-class User extends Object(__WEBPACK_IMPORTED_MODULE_1__concern_crud_for_adapter__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */]) {
-  static get resourceType () { return 'users' }
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  me () {
-    return this.get('/me')
+var _base = __webpack_require__(1);
+
+var _base2 = _interopRequireDefault(_base);
+
+var _index_for_adapter = __webpack_require__(2);
+
+var _index_for_adapter2 = _interopRequireDefault(_index_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Suggestion = function (_IndexForAdapter) {
+  _inherits(Suggestion, _IndexForAdapter);
+
+  function Suggestion() {
+    _classCallCheck(this, Suggestion);
+
+    return _possibleConstructorReturn(this, (Suggestion.__proto__ || Object.getPrototypeOf(Suggestion)).apply(this, arguments));
   }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = User;
+
+  _createClass(Suggestion, [{
+    key: 'search',
+    value: function search(_ref) {
+      var _ref$filter = _ref.filter,
+          filter = _ref$filter === undefined ? null : _ref$filter,
+          _ref$marketId = _ref.marketId,
+          marketId = _ref$marketId === undefined ? null : _ref$marketId,
+          _ref$page = _ref.page,
+          page = _ref$page === undefined ? null : _ref$page,
+          _ref$query = _ref.query,
+          query = _ref$query === undefined ? null : _ref$query;
+
+      filter = filter || {};
+      page = page || {};
+      return this.post('/search', { data: { filter: filter, market_id: marketId, page: page, q: query } });
+    }
+  }], [{
+    key: 'resourceType',
+    get: function get() {
+      return 'suggestions';
+    }
+  }]);
+
+  return Suggestion;
+}((0, _index_for_adapter2.default)(_base2.default));
+
+exports.default = Suggestion;
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _base = __webpack_require__(1);
+
+var _base2 = _interopRequireDefault(_base);
+
+var _crud_for_adapter = __webpack_require__(4);
+
+var _crud_for_adapter2 = _interopRequireDefault(_crud_for_adapter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var User = function (_CrudForAdapter) {
+  _inherits(User, _CrudForAdapter);
+
+  function User() {
+    _classCallCheck(this, User);
+
+    return _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).apply(this, arguments));
+  }
+
+  _createClass(User, [{
+    key: 'me',
+    value: function me() {
+      return this.get('/me');
+    }
+  }], [{
+    key: 'resourceType',
+    get: function get() {
+      return 'users';
+    }
+  }]);
+
+  return User;
+}((0, _crud_for_adapter2.default)(_base2.default));
+
+exports.default = User;
 
 /***/ })
 /******/ ]);
