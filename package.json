@@ -5,7 +5,7 @@
   "browser": "dist/real_savvy.web.js",
   "main": "dist/real_savvy.node.js",
   "scripts": {
-    "test": "mocha --require babel-core/register test/server.entry.js && karma start"
+    "test": "mocha --require babel-core/register test/server.entry.js && karma start --no-auto-watch --single-run"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +32,7 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-commonjs": "^1.0.0",
     "karma-eslint": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
     "karma-json-fixtures-preprocessor": "0.0.6",
     "karma-mocha": "^1.3.0",
     "karma-webpack": "^2.0.9",
