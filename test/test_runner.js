@@ -195,6 +195,19 @@ export default class TestRunner {
           meTests.call(this, getClient, adapterPath);
         });
 
+        describe('#suggestion', () => {
+          let adapterPath = 'suggestions';
+
+          indexTests.call(this, getClient, adapterPath);
+
+          it('#search', (done) => {
+            getClient()[adapterPath].search({filter: filter, market_id: market_id, page: page, query: 'Buda'}).then(res => {
+              assert.exists(res.body)
+              done();
+            });
+          });
+        });
+
         describe('#user', () => {
           let adapterPath = 'users';
           let attributes = {email: 'foo@realsavvy.com'};

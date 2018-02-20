@@ -10,6 +10,7 @@ import OpenHouseAdapter from '../adapter/open_house'
 import PropertyAdapter from '../adapter/property'
 import SavedSearchAdapter from '../adapter/saved_search'
 import SiteAdapter from '../adapter/site'
+import SuggestionAdapter from '../adapter/suggestion'
 import UserAdapter from '../adapter/user'
 
 const adapaterLookup = {
@@ -22,6 +23,7 @@ const adapaterLookup = {
   properties: PropertyAdapter,
   saved_searches: SavedSearchAdapter,
   sites: SiteAdapter,
+  suggestions: SuggestionAdapter,
   users: UserAdapter
 }
 
@@ -80,6 +82,10 @@ export default class Client {
 
   get sites () {
     return this.fetchAdapater('sites')
+  }
+
+  get suggestions () {
+    return this.fetchAdapater('suggestions')
   }
 
   get users () {
