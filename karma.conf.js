@@ -20,10 +20,10 @@ module.exports = function(config) {
     files: [
       'test/fixtures/**/*.json',
       'test/helper/**/*.js',
-      'test/config/**/*.js',
+      'test/test_runner.js',
       {pattern: 'src/*/*.js', included: false},
       'src/index.js',
-      'test/**/*.spec.js',
+      'test/browser.entry.js',
     ],
 
 
@@ -36,9 +36,9 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'src/index.js': ['webpack'],
-      'test/**/*.spec.js': ['babel'],
-      'test/config/**/*.js': ['babel'],
+      'test/test_runner.js': ['babel'],
       'test/helper/**/*.js': ['babel'],
+      'test/browser.entry.js': ['babel'],
       'test/fixtures/**/*.json': ['json_fixtures'],
       'src/**/*.js': ['eslint'],
     },

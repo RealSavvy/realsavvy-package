@@ -40,7 +40,6 @@ let serverConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    library: ['RealSavvy'],
     libraryTarget: 'umd',
   }
 }
