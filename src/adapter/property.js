@@ -4,10 +4,11 @@ import ComplexShowForAdapter from '../concern/complex_show_for_adapter'
 export default class Property extends ComplexShowForAdapter(Base) {
   static get resourceType () { return 'properties' }
 
-  search ({filter = null, marketId = null, page = null}) {
+  search ({filter = null, marketId = null, page = null, sort = null}) {
     filter = filter || {}
+    sort = sort || {}
     page = page || {}
-    return this.post(`/search`, {data: {filter: filter, market_id: marketId, page: page}})
+    return this.post(`/search`, {data: {filter: filter, market_id: marketId, page: page, sort: sort}})
   }
 
   cluster ({filter = null, marketId = null, page = null}) {
