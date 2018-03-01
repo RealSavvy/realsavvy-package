@@ -4282,11 +4282,14 @@ var Property = function (_ComplexShowForAdapte) {
           _ref$marketId = _ref.marketId,
           marketId = _ref$marketId === undefined ? null : _ref$marketId,
           _ref$page = _ref.page,
-          page = _ref$page === undefined ? null : _ref$page;
+          page = _ref$page === undefined ? null : _ref$page,
+          _ref$sort = _ref.sort,
+          sort = _ref$sort === undefined ? null : _ref$sort;
 
       filter = filter || {};
+      sort = sort || {};
       page = page || {};
-      return this.post('/search', { data: { filter: filter, market_id: marketId, page: page } });
+      return this.post('/search', { data: { filter: filter, market_id: marketId, page: page, sort: sort } });
     }
   }, {
     key: 'cluster',
