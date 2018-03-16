@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "es6-promise": "^4.2.4"
+    "es6-promise": "^4.2.4",
+    "url-parse": "^1.2.0"
   }
 }
