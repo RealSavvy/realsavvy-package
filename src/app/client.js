@@ -1,3 +1,5 @@
+import URL from 'url-parse'
+
 import Connection from './connection'
 
 // Import Adapters
@@ -25,6 +27,28 @@ const adapaterLookup = {
   sites: SiteAdapter,
   suggestions: SuggestionAdapter,
   users: UserAdapter
+}
+
+let base64 = {}
+
+if (typeof btoa === 'undefined') {
+  base64.btoa = function (str) {
+    return Buffer.from(str).toString('base64')
+  }
+} else {
+  base64.btoa = function (str) {
+    return window.btoa(str)
+  }
+}
+
+if (typeof atob === 'undefined') {
+  base64.atob = function (b64Encoded) {
+    return Buffer.from(b64Encoded, 'base64').toString('ascii')
+  }
+} else {
+  base64.atob = function (b64b64Encoded) {
+    return window.atob(b64b64Encoded)
+  }
 }
 
 export default class Client {
@@ -90,5 +114,19 @@ export default class Client {
 
   get users () {
     return this.fetchAdapater('users')
+  }
+
+  get shareToken () {
+    let tokenEncodedPayload = this.token.split('.')[1]
+    let tokenPayload = JSON.parse(base64.atob(tokenEncodedPayload))
+    let shareTokenPayload = {aud: tokenPayload.aud, sub: tokenPayload.sub}
+    let shareToken = base64.btoa(JSON.stringify(shareTokenPayload))
+    return shareToken
+  }
+
+  addShareTokenToUrl (urlStr) {
+    let url = new URL(urlStr, null, true)
+    url.query['rs_share_token'] = this.shareToken
+    return url.toString()
   }
 }

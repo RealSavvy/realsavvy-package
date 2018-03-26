@@ -34,7 +34,8 @@ export default class TestRunner {
 
   run(){
     const sampleComplexId = 'north_texas_real_estate_information_systems~72621119';
-    const token = 'ARealToken.JWT.Verified';
+    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIxIiwic3ViIjoiMSIsInNjb3BlcyI6WyJwdWJsaWMiXX0.Verified';
+    const shareToken = 'eyJhdWQiOiIxIiwic3ViIjoiMSJ9'
 
     const filter = {price:{max: 200000}};
     const market_id = 85;
@@ -45,6 +46,20 @@ export default class TestRunner {
         it('a new object can be created', () => {
           let client = new this.ClientKlass({token:token});
           assert.exists(client);
+        });
+      });
+
+      describe('#addShareTokenToUrl', () => {
+        it('token in url meets what is expected', () => {
+          let client = new this.ClientKlass({token:token});
+          assert.equal(client.addShareTokenToUrl('https://www.realsavvy.com/'), `https://www.realsavvy.com/?rs_share_token=${shareToken}`)
+        });
+      });
+
+      describe('#shareToken', () => {
+        it('token is consistent with server results', () => {
+          let client = new this.ClientKlass({token:token});
+          assert.equal(client.shareToken, shareToken)
         });
       });
 
