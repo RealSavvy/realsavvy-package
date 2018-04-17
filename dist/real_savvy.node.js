@@ -1630,23 +1630,35 @@ var adapaterLookup = {
 
 var base64 = {};
 
+base64.btoaUrlSafe = function (str) {
+  return str.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+};
+
 if (typeof btoa === 'undefined') {
   base64.btoa = function (str) {
-    return Buffer.from(str).toString('base64');
+    return base64.btoaUrlSafe(Buffer.from(str).toString('base64'));
   };
 } else {
   base64.btoa = function (str) {
-    return window.btoa(str);
+    return base64.btoaUrlSafe(window.btoa(str));
   };
 }
 
+base64.atobUrlSafe = function (str) {
+  var encoded = str.replace(/-/g, '+').replace(/_/g, '/');
+  while (encoded.length % 4) {
+    encoded += '=';
+  }
+  return encoded;
+};
+
 if (typeof atob === 'undefined') {
   base64.atob = function (b64Encoded) {
-    return Buffer.from(b64Encoded, 'base64').toString('ascii');
+    return Buffer.from(base64.atobUrlSafe(b64Encoded), 'base64').toString('ascii');
   };
 } else {
-  base64.atob = function (b64b64Encoded) {
-    return window.atob(b64b64Encoded);
+  base64.atob = function (b64Encoded) {
+    return window.atob(base64.atobUrlSafe(b64Encoded));
   };
 }
 
@@ -1746,7 +1758,7 @@ var Client = function () {
       var tokenEncodedPayload = this.token.split('.')[1];
       var tokenPayload = JSON.parse(base64.atob(tokenEncodedPayload));
       var shareTokenPayload = { aud: tokenPayload.aud, sub: tokenPayload.sub };
-      var shareToken = base64.btoa(JSON.stringify(shareTokenPayload));
+      var shareToken = base64.btoa(JSON.stringify(shareTokenPayload)).replace(/=/g, '');
       return shareToken;
     }
   }], [{
