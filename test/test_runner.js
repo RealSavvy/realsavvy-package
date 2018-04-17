@@ -52,7 +52,7 @@ export default class TestRunner {
       describe('#addShareTokenToUrl', () => {
         it('token in url meets what is expected', () => {
           let client = new this.ClientKlass({token:token});
-          assert.equal(client.addShareTokenToUrl('https://www.realsavvy.com/'), `https://www.realsavvy.com/?rs_share_token=${shareToken}`)
+          assert.equal(client.addShareTokenToUrl('https://www.realsavvy.com/'), `https://www.realsavvy.com/?_cycagt=${shareToken}`)
         });
       });
 

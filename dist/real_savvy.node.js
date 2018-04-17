@@ -1686,7 +1686,7 @@ var Client = function () {
     key: 'addShareTokenToUrl',
     value: function addShareTokenToUrl(urlStr) {
       var url = new _urlParse2.default(urlStr, null, true);
-      url.query['rs_share_token'] = this.shareToken;
+      url.query['_cycagt'] = this.shareToken;
       return url.toString();
     }
   }, {
@@ -1758,7 +1758,7 @@ var Client = function () {
       var tokenEncodedPayload = this.token.split('.')[1];
       var tokenPayload = JSON.parse(base64.atob(tokenEncodedPayload));
       var shareTokenPayload = { aud: tokenPayload.aud, sub: tokenPayload.sub };
-      var shareToken = base64.btoa(JSON.stringify(shareTokenPayload)).replace(/=/g, '');
+      var shareToken = base64.btoa(JSON.stringify(shareTokenPayload));
       return shareToken;
     }
   }], [{

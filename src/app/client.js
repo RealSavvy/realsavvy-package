@@ -130,13 +130,13 @@ export default class Client {
     let tokenEncodedPayload = this.token.split('.')[1]
     let tokenPayload = JSON.parse(base64.atob(tokenEncodedPayload))
     let shareTokenPayload = {aud: tokenPayload.aud, sub: tokenPayload.sub}
-    let shareToken = base64.btoa(JSON.stringify(shareTokenPayload)).replace(/=/g, '')
+    let shareToken = base64.btoa(JSON.stringify(shareTokenPayload))
     return shareToken
   }
 
   addShareTokenToUrl (urlStr) {
     let url = new URL(urlStr, null, true)
-    url.query['rs_share_token'] = this.shareToken
+    url.query['_cycagt'] = this.shareToken
     return url.toString()
   }
 }
