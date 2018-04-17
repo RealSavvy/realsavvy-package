@@ -1,6 +1,6 @@
 {
   "name": "realsavvy-package",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "browser": "dist/real_savvy.web.js",
   "main": "dist/real_savvy.node.js",
