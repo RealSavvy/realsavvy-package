@@ -1,9 +1,45 @@
 # realsavvy-package
-RealSavvy API Package
+RealSavvy API Package that can be used client or server side
 
 ## How To Use
 
-### Coming Soon
+### Install Package
+
+```bash
+npm install realsavvy-package
+```
+
+### Creating A Client
+
+```js
+import { Client as RealSavvyClient } from 'realsavvy-package'
+
+const client = new RealSavvyClient({token: 'jwt.access.token'});
+```
+
+### Querying for properties
+
+```js
+client.properties.search({filter: {price: {max: 500000}}, page: {size: 8}}).then(response => {
+  console.log(response.data)
+})
+```
+
+### Show a property
+
+```js
+client.properties.show({complexId: 'hudson_gateway_association_of_realtors~24542612'}).then(response => {
+  console.log(response.data)
+})
+```
+
+### Get share token for a user
+
+```js
+const client = new RealSavvyClient({token: 'jwt.access.tokenForUser'});
+
+client.shareToken
+```
 
 ## How To Developer
 1. Fork the repo and clone it down
