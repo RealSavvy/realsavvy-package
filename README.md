@@ -41,6 +41,22 @@ const client = new RealSavvyClient({token: 'jwt.access.tokenForUser'});
 client.shareToken
 ```
 
+### Get Agents For Given Site
+
+```js
+client.agents.index({page: {size: 8}}).then(response => {
+  console.log(response.data)
+})
+```
+
+### Show Agent
+
+```js
+client.agents.show({id: 48}).then(response => {
+  console.log(response.data)
+})
+```
+
 ## How To Developer
 1. Fork the repo and clone it down
 
