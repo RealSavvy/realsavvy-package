@@ -155,6 +155,26 @@ export default class TestRunner {
           indexTests.call(this, getClient, adapterPath);
         });
 
+        describe('#listing', () => {
+          let adapterPath = 'listings';
+
+          complexShowTests.call(this, getClient, adapterPath);
+
+          it('#search', (done) => {
+            getClient()[adapterPath].search({filter: filter, market_id: market_id, page: page}).then(res => {
+              assert.exists(res.body)
+              done();
+            });
+          });
+
+          it('#cluster', (done) => {
+            getClient()[adapterPath].cluster({filter: filter, market_id: market_id, page: page}).then(res => {
+              assert.exists(res.body)
+              done();
+            });
+          });
+        });
+
         describe('#property', () => {
           let adapterPath = 'properties';
 

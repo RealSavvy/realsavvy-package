@@ -9,6 +9,7 @@ import BrokerOfficeAdapter from '../adapter/broker_office'
 import CollectionAdapter from '../adapter/collection'
 import MarketAdapter from '../adapter/market'
 import OpenHouseAdapter from '../adapter/open_house'
+import ListingAdapter from '../adapter/listing'
 import PropertyAdapter from '../adapter/property'
 import SavedSearchAdapter from '../adapter/saved_search'
 import SiteAdapter from '../adapter/site'
@@ -22,6 +23,7 @@ const adapaterLookup = {
   collections: CollectionAdapter,
   markets: MarketAdapter,
   open_houses: OpenHouseAdapter,
+  listings: ListingAdapter,
   properties: PropertyAdapter,
   saved_searches: SavedSearchAdapter,
   sites: SiteAdapter,
@@ -104,6 +106,10 @@ export default class Client {
 
   get openHouses () {
     return this.fetchAdapater('open_houses')
+  }
+
+  get listings () {
+    return this.fetchAdapater('listings')
   }
 
   get properties () {
